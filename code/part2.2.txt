@@ -1,0 +1,58 @@
+# These commands should be types out by hand to get an understanding of what they do.
+# They are safe to run if run exactly as they are listed here.
+# Note, you do not need to include anything from the comments onward in each line (the parts beginning with #...)
+cd                                                # move to home folder
+cd icl-file                                       # change to working folder
+find git -name kubernetes                         # find files with the name 'kubernetes' in the folder 'git'
+find git -name kubernetes -type f                 # find files with the name 'kubernetes' in the folder 'git' that are of type 'file'
+find git -name kubernetes -type d                 # find files with the name 'kubernetes' in the folder 'git' that are of type 'directory'
+man find                                          # look for info on types and flags
+touch someuniquefile                              # create a file that does not exist
+locate someuniquefile                             # not there
+sudo updatedb                                     # update the database
+locate someuniquefile                             # file is in the database now
+touch afile                                       # create a file
+cp afile copyofafile                              # simple copying of a file
+rm afile copyofafile                              # remove files
+cp -r kubernetes kubernetes-bak
+cp -r kubernetes kubernetes-bak                   # copy contents of folder
+ls kubernetes-bak                                 # list contents of folder - kubernetes is in there
+ls kubernetes-bak/kubernetes                      # contents of that folder match
+rm -rf kubernetes-bak                             # remove copy
+rsync --dry-run -avz kubernetes/ kubernetes-bak   # dry run, -a basically treats folder and contents as a single unit
+                                                  # forward slash is important, otherwise it puts kubernetes-bak/kubernetes/CONTENTS
+                                                  # rather than kubernetes-bak/CONTENTS
+rsync -avz kubernetes/ kubernetes-bak             # for real
+rsync -avz kubernetes/ kubernetes-bak             # re-run, with no change to files
+touch kubernetes/newfile                          # create a new file
+ls -lrt kubernetes                                # show new file
+rsync -avz kubernetes/ kubernetes-bak             # copies over only new file
+touch kubernetes/newfile                          # update file
+rsync -avz kubernetes/ kubernetes-bak             # copies over updated/touched file
+touch afile                                       # create afile
+cp afile afile.copied                             # copy that file
+diff afile afile.copied                           # diff shows no difference
+                                                  # next three lines add a line to afile.copied
+cat >> afile.copied << EOF
+a line added
+EOF
+
+diff afile afile.copied                           # diff shows line added
+                                                  # next three lines add a line to afile
+cat >> afile << EOF
+another line added
+EOF
+
+diff afile afile.copied                           # diff shows two different lines
+
+diff kubernetes kubernetes-bak                    # just looks at contents of the folders
+diff -r kubernetes kubernetes-bak                 # recurses down, looking for differences in files
+touch kubernetes-bak/somefile                     # add a file to kubernetes-bak
+diff -r kubernetes kubernetes-bak                 # file mentioned in diff
+                                                  # next three lines add a file with some content
+cat > kubernetes/somefile << EOF
+asdasfasf
+EOF
+diff -r kubernetes kubernetes-bak                 # file diffed
+
+cd && rm -rf icl-file                             # cleanup (optional)

@@ -1,0 +1,40 @@
+# These commands should be types out by hand to get an understanding of what they do.
+# They are safe to run if run exactly as they are listed here.
+# Note, you do not need to include anything from the comments onward in each line (the parts beginning with #...)
+cd                                                              # move to home folder
+mkdir icl-text                                                  # create folder to work in
+cd icl-text                                                     # change to working folder
+git clone --depth=1 https://github.com/kubernetes/kubernetes    # clone the repo - this may take a while (1 minute on my host)
+cd kubernetes                                                   # move into codebase
+du .                                                            # disk taken up by each file
+du -hs .                                                        # how much disk is taken up by all files in and under this folder
+grep network *                                                  # look for occurrences of the string 'network' in files
+grep -r network *                                               # look for occurrences of the string
+grep -r network * | less                                        # pipe the output to 'less'
+grep -ri Network * | less                                       # ignore case
+grep -riw Network * | less                                      # ignore case, and match 'network' as a whole word only
+grep -vrwi Network * | less                                     # match lines that DON'T have the word 'network' in them
+grep -nrwi Network * | less                                     # show line numbers as well
+grep -rwi Network * | tr 'n' 'p' | less                         # use 'tr' to replace 'n's with 'p' in the output
+grep -rwi Network * | tr 'nN' 'pP' | less                       # use 'tr' to replace 'n's with 'p's while keeping case
+grep -rwi Network * | tr -d '\n \t' | less                      # remove all newlines, space and tabs from output
+grep -rwi Network * | sed 's/Network/FOO/' | less               # use sed to replace first match of 'Network' with FOO
+grep -rwi Network * | sed 's/[Nn]etwork/FOO/' | less            # use sed to replace first match 'Network' or 'network' with FOO
+grep -rwi Network * | sed 's/[Nn]etwork/FOO/g' | less           # use sed to replace 'Network' or 'network' with FOO everywhere on the line
+grep -rwi Network * | sort | less                               # use sort to sort the output
+grep -hrwi Network * | sort | less                              # use -h to remove filenames from the output
+watch top -b                                                    #
+watch -d top -b                                                 #
+wc -l README.md                                                 # number of lines in README.md file
+wc -w README.md                                                 # number of words in README.md file
+wc -c README.md                                                 # number of characters in README.md file
+grep -hrw 'Network' * | wc -l                                   # number of lines that match whole word 'Network'
+grep -hrw 'Network' * | wc -w                                   # number of words in lines that match whole word 'Network'
+grep -hrw 'Network' * | wc -c                                   # number of characters in lines that match whole word 'Network'
+grep -hrwi 'Network' * | wc -l                                  # number of lines that match whole word 'Network' ignoring case
+grep -hrwi 'Network' * | wc -w                                  # number of words in lines that match whole word 'Network'
+grep -hrwi 'Network' * | wc -c                                  # number of
+head README.md                                                  #
+tail README.md                                                  #
+tail -20 README.md                                              #
+tail -f README.md                                               # 'follow' file as it is being written to. CTRL+C to quit
