@@ -18,3 +18,10 @@ You must be using a mainstream shell (bash, zsh or the like).
 
 ## Links
 
+[This repo](https://github.com/ianmiell/introduction-to-the-command-line)
+
+[Introduction to the bash shell](https://www.oreilly.com/live-training/courses/introduction-to-the-bash-shell/0636920267348/)
+
+[Man pages](https://man7.org/linux/man-pages/)
+
+[Regexes](https://regexone.com/)
