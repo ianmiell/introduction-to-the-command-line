@@ -4,10 +4,14 @@
 cd                                                              # move to home folder
 mkdir icl-text                                                  # create folder to work in
 cd icl-text                                                     # change to working folder
-git clone --depth=1 https://github.com/kubernetes/kubernetes    # clone the repo - this may take a while (1 minute on my host)
+
+git clone --depth=1 https://github.com/kubernetes/kubernetes    # clone the repo - this may take a while (1 minute on my host) [git not covered in course]
+
 cd kubernetes                                                   # move into codebase
+
 du .                                                            # disk taken up by each file
 du -hs .                                                        # how much disk is taken up by all files in and under this folder
+
 grep network *                                                  # look for occurrences of the string 'network' in files
 grep -r network *                                               # look for occurrences of the string
 grep -r network * | less                                        # pipe the output to 'less'
@@ -23,17 +27,18 @@ grep -rwi Network * | sed 's/[Nn]etwork/FOO/' | less            # use sed to rep
 grep -rwi Network * | sed 's/[Nn]etwork/FOO/g' | less           # use sed to replace 'Network' or 'network' with FOO everywhere on the line
 grep -rwi Network * | sort | less                               # use sort to sort the output
 grep -hrwi Network * | sort | less                              # use -h to remove filenames from the output
-watch top -b                                                    #
-watch -d top -b                                                 #
+
 wc -l README.md                                                 # number of lines in README.md file
 wc -w README.md                                                 # number of words in README.md file
 wc -c README.md                                                 # number of characters in README.md file
+
 grep -hrw 'Network' * | wc -l                                   # number of lines that match whole word 'Network'
 grep -hrw 'Network' * | wc -w                                   # number of words in lines that match whole word 'Network'
 grep -hrw 'Network' * | wc -c                                   # number of characters in lines that match whole word 'Network'
 grep -hrwi 'Network' * | wc -l                                  # number of lines that match whole word 'Network' ignoring case
 grep -hrwi 'Network' * | wc -w                                  # number of words in lines that match whole word 'Network'
 grep -hrwi 'Network' * | wc -c                                  # number of
+
 head README.md                                                  #
 tail README.md                                                  #
 tail -20 README.md                                              #
