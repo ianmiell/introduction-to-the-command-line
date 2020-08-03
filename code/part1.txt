@@ -64,3 +64,9 @@ ls -l afile                                  # list the file, showing file modes
 chmod g+r afile                              # group owner can read
 ls -l afile                                  # list the file, showing file modes
 info chmod                                   # info command
+
+echo $0                                      # which kind of shell am I in?
+pushd /tmp                                   # push folder onto stack, and move to it
+popd                                         # pop folder from stack, and return to next on stack
+sh                                           # run a `sh` shell
+pushd /tmp                                   # try pushd from `sh` shell
