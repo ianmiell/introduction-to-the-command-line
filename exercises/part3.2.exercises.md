@@ -4,3 +4,4 @@
 1. Look at the flags to 'ps' in the 'man' page, and see what information you can retrieve about running processes on your machine
 1. Does your system have 'systemctl'? Look at some of the services running on your machine
 1. Research the 'netstat' command, and compare its functionality to 'lsof'
+1. Go through all the commands listed in the code for this section and study their man pages

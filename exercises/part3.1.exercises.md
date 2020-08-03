@@ -7,3 +7,4 @@
 1. Try 'ping'ing those IPs. See what happens and try to figure out why
 1. Find out which DNS server your system is using
 1. Find out how many ip addresses your machine has
+1. Go through all the commands listed in the code for this section and study their man pages
