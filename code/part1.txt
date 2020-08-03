@@ -1,0 +1,66 @@
+# These commands should be types out by hand to get an understanding of what they do.
+# They are safe to run if run exactly as they are listed here.
+cd                                           # go to home folder
+pwd                                          # folder I am in
+cd /tmp                                      # move to another folder
+cd -                                         # return to previous folder
+mkdir icl-core                               # make folder for this activity
+cd icl-core                                  # change directory to this folder
+cd -                                         # return to previous folder
+cd -                                         # come back to newly-created folder
+mkdir path/to/a/new/folder                   # try to make a new set of folders
+mkdir -p path/to/a/new/folder                # use -p to create deeper chain of folders
+cd path                                      # move into path folder
+touch afile                                  # create a file
+touch .adotfile                              # create a dotfile
+ls                                           # list files
+ls -l                                        # list files with more information
+ls -a                                        # list all files, including dotfiles
+ls -lrt                                      # most commonly-used in practice: long, reversed time order (most recently changed files first)
+ls -lrta                                     # as above, but with dotfiles too
+ls -R                                        # show files recursively down the hierarchy
+ls -lR                                       # same, but with long output
+rm afile                                     # delete a file
+ls
+rm to                                        # try and remove the 'to' folder
+rmdir to                                     # try to use rmdir to remove a folder
+rmdir to/a/new/folder                        # can remove folder if there is nothing in it
+ls -lR                                       # check it worked
+rm -r to/a                                   # rm with -r can delete without check
+ls -lR                                       # check again
+                                             # The next four lines create a file
+cat > afile << EOF
+some text in a file
+some more text
+EOF
+                                             # file created
+cat afile                                    # output contents of file
+tac afile                                    # reverse output of contents of file
+cp afile afile.copied                        # copy file
+cat afile                                    # original still intact
+cat afile.copied                             # copy is the same
+echo some text                               # output text to screen
+echo -n no newline                           # output with no newline
+echo -n no newline; echo -n no newline       # demonstrate no newline if in zsh, and semicolon separator
+echo -n no newline && echo -n no newline     # demonstrate no newline if in zsh with '&&' operator
+less /usr/share/doc/bash/bash.html           # less command
+man ls                                       # man command
+man man                                      # documentation about man itself
+man 1 intro                                  # description of section 1 of man pages
+man 2 intro                                  # description of section 2 of man pages
+man -k browser                               # find man pages that mention word in main description
+man -K browser                               # search for man pages that have text anywhere in its text
+sudo ls                                      # get admin privileges (might not work for you)
+mkdir tmp                                    # make a folder
+cd tmp                                       # move into the folder
+touch afile                                  # create a file
+ls -l afile                                  # list the file, showing file modes
+chmod -r afile                               # no-one can read
+ls -l afile                                  # list the file, showing file modes
+chmod +r afile                               # everyone can read
+ls -l afile                                  # list the file, showing file modes
+chmod o-r afile                              # 'other' users cannot read
+ls -l afile                                  # list the file, showing file modes
+chmod g+r afile                              # group owner can read
+ls -l afile                                  # list the file, showing file modes
+info chmod                                   # info command
