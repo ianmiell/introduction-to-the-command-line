@@ -1,5 +1,6 @@
 # These commands should be types out by hand to get an understanding of what they do.
 # They are safe to run if run exactly as they are listed here.
+# Note, you do not need to include anything from the comments onward in each line (the parts beginning with #...)
 cd                                           # go to home folder
 pwd                                          # folder I am in
 cd /tmp                                      # move to another folder
