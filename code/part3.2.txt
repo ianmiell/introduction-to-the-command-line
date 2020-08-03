@@ -1,0 +1,8 @@
+# These commands should be types out by hand to get an understanding of what they do.
+# They are safe to run if run exactly as they are listed here.
+# Note, you do not need to include anything from the comments onward in each line (the parts beginning with #...)
+cd                                                # move to home folder
+mkdir icl-sys                                     # make system folder
+cd icl-sys                                        # change to working folder
+
+cd && rm -rf icl-file                             # cleanup (optional)
