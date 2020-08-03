@@ -3,14 +3,17 @@
 # Note, you do not need to include anything from the comments onward in each line (the parts beginning with #...)
 cd                                                # move to home folder
 cd icl-file                                       # change to working folder
+
 find git -name kubernetes                         # find files with the name 'kubernetes' in the folder 'git'
 find git -name kubernetes -type f                 # find files with the name 'kubernetes' in the folder 'git' that are of type 'file'
 find git -name kubernetes -type d                 # find files with the name 'kubernetes' in the folder 'git' that are of type 'directory'
 man find                                          # look for info on types and flags
+
 touch someuniquefile                              # create a file that does not exist
 locate someuniquefile                             # not there
 sudo updatedb                                     # update the database
 locate someuniquefile                             # file is in the database now
+
 touch afile                                       # create a file
 cp afile copyofafile                              # simple copying of a file
 rm afile copyofafile                              # remove files
@@ -19,6 +22,7 @@ cp -r kubernetes kubernetes-bak                   # copy contents of folder
 ls kubernetes-bak                                 # list contents of folder - kubernetes is in there
 ls kubernetes-bak/kubernetes                      # contents of that folder match
 rm -rf kubernetes-bak                             # remove copy
+
 rsync --dry-run -avz kubernetes/ kubernetes-bak   # dry run, -a basically treats folder and contents as a single unit
                                                   # forward slash is important, otherwise it puts kubernetes-bak/kubernetes/CONTENTS
                                                   # rather than kubernetes-bak/CONTENTS
@@ -29,10 +33,11 @@ ls -lrt kubernetes                                # show new file
 rsync -avz kubernetes/ kubernetes-bak             # copies over only new file
 touch kubernetes/newfile                          # update file
 rsync -avz kubernetes/ kubernetes-bak             # copies over updated/touched file
+
 touch afile                                       # create afile
 cp afile afile.copied                             # copy that file
 diff afile afile.copied                           # diff shows no difference
-                                                  # next three lines add a line to afile.copied
+                                                  # next three lines add a line to afile
 cat >> afile.copied << EOF
 a line added
 EOF
@@ -51,7 +56,7 @@ touch kubernetes-bak/somefile                     # add a file to kubernetes-bak
 diff -r kubernetes kubernetes-bak                 # file mentioned in diff
                                                   # next three lines add a file with some content
 cat > kubernetes/somefile << EOF
-asdasfasf
+yet another line
 EOF
 diff -r kubernetes kubernetes-bak                 # file diffed
 

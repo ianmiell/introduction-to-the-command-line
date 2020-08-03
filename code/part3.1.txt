@@ -4,14 +4,17 @@
 cd                                                                            # move to home folder
 mkdir icl-net                                                                 # make network folder
 cd icl-net                                                                    # change to working folder
+
 wget https://bbc.co.uk/news                                                   # wget bbc news file
 less news                                                                     # view the file
 rm news                                                                       # remove the file
 ls
+
 curl https://bbc.co.uk/news                                                   # get same file with curl
 ls                                                                            # no output, no file?
 curl -v https://bbc.co.uk/news                                                # get same file with verbose output
 curl -L https://bbc.co.uk/news                                                # follow 301 response to 'correct' location
+
 telnet bbc.co.uk 80                                                           # use telnet to access
 GET /news HTTP/1.1                                                            # type in HTTP request
 Host: bbc.co.uk
