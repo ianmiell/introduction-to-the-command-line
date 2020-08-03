@@ -33,11 +33,13 @@ ip -o addr | grep -v veth                                                     # 
 ip route                                                                      # show routes
 ip neigh                                                                      # show ARP table (machines 'nearby')
 
-dig bbc.co.uk                                                                 # basic output. Note the SERVER line
-dig +trace bbc.co.uk                                                          # trace how the info was got
+dig bbc.co.uk                                                                 # basic output. Note the SERVER line
+dig +trace bbc.co.uk                                                          # trace how the info was got
 dig @8.8.8.8 bbc.co.uk                                                        # use google's DNS server
 dig bbc.co.uk NS                                                              # who is the nameserver for this address?
 dig +short bbc.co.uk                                                          # just the IP - get used to this!
 dig +short +identify bbc.co.uk                                                # just the IP, and tell me who told me
 
-cd && rm -rf icl-file                                                         # cleanup (optional)
+nmap bbc.co.uk                                                                # get the open ports on that server
+
+cd && rm -rf icl-net                                                          # cleanup (optional)
