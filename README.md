@@ -25,3 +25,7 @@ You must be using a mainstream shell (bash, zsh or the like).
 [Man pages](https://man7.org/linux/man-pages/)
 
 [Regexes](https://regexone.com/)
+
+[Readline](https://tiswww.case.edu/php/chet/readline/readline.html)
+
+[Syscalls](https://chromium.googlesource.com/chromiumos/docs/+/master/constants/syscalls.md)
